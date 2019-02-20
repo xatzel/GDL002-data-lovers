@@ -4,5 +4,11 @@
 const example = () => {
   return 'example';
 };
+const showAatroxName=(LOL)=>{
+  return LOL.lol[0].name;
+};
 
 window.example = example;
+window.dataLovers={
+  showAatroxName,
+}
