@@ -4,11 +4,18 @@
 const example = () => {
   return 'example';
 };
-const showAatroxName=(LOL)=>{
-  return LOL.lol[0].name;
-};
+
+
 
 window.example = example;
-window.dataLovers={
-  showAatroxName,
-}
+
+
+
+ let dataarray = [];
+
+ Object.keys(LOL.data).forEach(function(key){
+
+  dataarray.push(LOL.data[key]);
+});
+
+//console.log(LOL.data);
