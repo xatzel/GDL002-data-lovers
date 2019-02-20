@@ -2,16 +2,81 @@
 <html>
   <head>
     <meta charset="utf-8">
+
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
+      <div class="header">
+      <a href="#default" class="logo">+LOLVERS</a>
+          <div class="header-right">
+          <button id="HOME">WELCOME</button>
+          <button id="CHAMPIONS">CHAMPIONS</button>
+          <button id="LEAGUE">LEAGUE</button>
+          </div>
+      </div>
+
+
+
+        <!-- PANTALLA INICIO-->
+        <section id="WELCOME">
+            <h1>"WELCOME"</h1>
+            <p>adbszilubglsdgn</p>
+            <img src="http://apollo-uploads-las.s3.amazonaws.com/1437177167/mapa2.jpg" width="500" height="400">
+            <p>adbszilubglsdgn</p>
+        </section>
+
+
+
+        <!-- PANTALLA CAMPEONES-->
+        <section id="CHAMPS" style="display:none">
+          <h2>"CHAMPIONS"</h2>
+          <label for="name">NAME:</label>
+          <input type="text" id="name" />
+          <br>
+          <label for="LINE GAME">LINE:</label>
+          <select ="LINE">
+             <option value="1">TOP</option>
+             <option value="2">MIDDLE</option>
+             <option value="3">SUPPORT</option>
+             <option value="4">ADC</option>
+             <option value="5">JUNGLE</option>
+          </select>
+          <br>
+          <label for="ROLE GAME">ROLE:</label>
+          <select ="ROLE">
+             <option value="1">Assassin</option>
+             <option value="2">Fighter</option>
+             <option value="3">Mage</option>
+             <option value="4">Tank</option>
+             <option value="5">Support</option>
+             <option value="6">Marksman</option>
+          </select>
+        </section>
+
+        <!-- PANTALLA COMUNIDAD-->
+        <section id="COMMUN" style= "display:none">
+            <h3>"LEAGUE"</h3>
+            <p>adbszilubglsdgn</p>
+            <textarea rows="4" cols="50">
+At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+            </textarea>
+            <p>adbszilubglsdgn</p>
+
+        </section>
+
+
+     <footer class="pie-pagina"></footer>
+
     <div id="root"></div>
     <!-- <script src="./data/injuries/injuries.js"></script> -->
     <!-- <script src="./data/pokemon/pokemon.js"></script> -->
     <!-- <script src="./data/steam/steam.js"></script> -->
     <!-- <script src="./data/worldbank/worldbank.js"></script> -->
     <!-- <script src="./data/lol/lol.js"></script> -->
+
+
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>
