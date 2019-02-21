@@ -6,7 +6,6 @@ const example = () => {
 };
 
 
-
 window.example = example;
 
 
@@ -19,3 +18,4 @@ window.example = example;
 });
 
 //console.log(LOL.data);
+
