@@ -1,5 +1,5 @@
 body{
-	margin: 0;
+  margin: 0;
 	align-items: center;
 }
 
@@ -7,6 +7,8 @@ body{
 /* Style the header with a grey background and some padding */
 .header {
   overflow: hidden;
+  color: white;
+  background: url(https://lolstatic-a.akamaihd.net/lolkit/1.1.6/resources/images/bg-default.jpg);
   background-color: #f1f1f1;
   padding: 20px 10px;
 }
@@ -14,7 +16,7 @@ body{
 /* Style the header links */
 .header a {
   float: left;
-  color: black;
+  color: white;
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -29,17 +31,6 @@ body{
   font-weight: bold;
 }
 
-/* Change the background color on mouse-over */
-.header a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Style the active/current link*/
-.header a.active {
-  background-color: dodgerblue;
-  color: white;
-}
 
 /* Float the link section to the right */
 .header-right {
@@ -47,7 +38,9 @@ body{
 }
 
 #content {
+  list-style: none;
   margin: auto;
+  
 }
 
 .ul {
@@ -56,7 +49,41 @@ body{
   padding: 0px;
 }
 
+.championBox {
+  list-style: none;
+  max-width: 50%;
+  padding: 20px;
+  margin: 30px auto;
+  background-color: #fff;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);  
+  display: inline-block;
+  text-align:center;
+  overflow: hidden;
+  position: relative
+  
+}
 
+.championBox:hover #text-footer {
+  top: 0%;
+}
+.wrap-text {
+  padding: 15px;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.wrap-text p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  margin-top: 0;
+  color: #666
+}
+
+  
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
 @media screen and (max-width: 500px) {
@@ -74,32 +101,4 @@ body{
 	width: 100%;
 	background-color: #000;
 	height: 50px;
-}
-/*
-@media screen and (min-width:780px) and (max-width:1024px) {
-			.encabezado{
-				background-color: rgb(246, 246, 243);
-			}
-			.contenido, .contenido-lateral{
-				width: 50%;
-			}
-}
-@media screen and (min-width:480px) and (max-width:780px) {
-			.encabezado{
-				background-color: rgb(246, 246, 243);
-			}
-			.contenido, .contenido-lateral{
-				width: 100%;
-			}
-}
-@media screen and (min-width:480px) {
-			.encabezado{
-				height: 80%;
-			}
-			.contenido{
-				background-color: rgb(250, 250, 168);
-			}
-			.contenido, .contenido-lateral{
-				width: 100%;
-			}
 }

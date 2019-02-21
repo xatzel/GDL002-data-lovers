@@ -9,13 +9,6 @@ const example = () => {
 window.example = example;
 
 
-
- let dataarray = [];
-
- Object.keys(LOL.data).forEach(function(key){
-
-  dataarray.push(LOL.data[key]);
-});
+lolArray = Object.values(LOL.data);
 
 //console.log(LOL.data);
-

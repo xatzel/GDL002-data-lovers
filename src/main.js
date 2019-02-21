@@ -19,23 +19,35 @@ function passPage3(){
 }
 document.getElementById("LEAGUE").addEventListener("click", passPage3);
 
-let champId= `
-<li class="box">
-<img src="{champ.splash}" width="300" height="150>
-<div class="id">
-<h3>{champ.id}</h3>
-</div>
-<div class="title">
-<h3>{champ.title}</h3>
-</div>
-</li>`;
 
-let listHtml = dataarray.map(lol => {
+let champId= `
+<div class="championBox">
+  <img src= "{champ.splash}" width="300" height="150>
+  <p class= "idChampion">
+  <h3>{champ.id}</h3>
+  </p>
+  <p class ="title">
+  <h3>{champ.title}</h3>
+  </p>
+  <div class="wrap-text" id="text-footer">
+  <p class=champInfo>Attack: {champ.info.attack}</p>
+  <p class=champDefense>Defense: {champ.info.defense}</p>
+  <p class=champMagic>Magic: {champ.info.magic}</p>
+  <p class=champDifficulty>Difficulty: {champ.info.difficulty}</p>
+  </div>
+</div>`;
+
+let listHtml = lolArray.map(lol => {
   return champId
   .replace("{champ.splash}", lol.splash)
   .replace("{champ.id}",lol.name)
-  .replace("{champ.title}",lol.title);
+  .replace("{champ.title}",lol.title)
+  .replace("{champ.info.attack}",lol.info.attack)
+  .replace("{champ.info.defense}",lol.info.defense)
+  .replace("{champ.info.magic}",lol.info.magic)
+  .replace("{champ.info.difficulty}",lol.info.difficulty);
 });
+
 
 let htmlString = listHtml.join('');
 
@@ -52,7 +64,7 @@ content.innerHTML = htmlString;
     let filterData=(data,condition) => {
   for(let i=0; i<data.length; i++){
     let champion = data[i];
-    if (lol.id == condition) {
+    if (LOL.data.id == condition) {
       printFirstData(champion);
 
      }
