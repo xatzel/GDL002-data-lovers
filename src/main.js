@@ -19,24 +19,29 @@ function passPage3(){
 }
 document.getElementById("LEAGUE").addEventListener("click", passPage3);
 
-
-let champId= `
+//let champId= 
+function champTemplate(champ) {
+return`
 <div class="championBox">
-  <img src= "{champ.splash}" width="300" height="150>
+  <img src= "${champ.splash}" width="300" height="150>
   <p class= "idChampion">
-  <h3>{champ.id}</h3>
+  <h3>${champ.id}</h3>
   </p>
   <p class ="title">
-  <h3>{champ.title}</h3>
+  <h3>${champ.title}</h3>
   </p>
   <div class="wrap-text" id="text-footer">
-  <p class=champInfo>Attack: {champ.info.attack}</p>
-  <p class=champDefense>Defense: {champ.info.defense}</p>
-  <p class=champMagic>Magic: {champ.info.magic}</p>
-  <p class=champDifficulty>Difficulty: {champ.info.difficulty}</p>
+  <p class=champInfo>Attack: ${champ.info.attack}</p>
+  <p class=champDefense>Defense: ${champ.info.defense}</p>
+  <p class=champMagic>Magic: ${champ.info.magic}</p>
+  <p class=champDifficulty>Difficulty: ${champ.info.difficulty}</p>
+  <p class=champRole>Role: ${champ.tags}</p>
   </div>
 </div>`;
+}
 
+/*
+ES LO MISMO DE ARRIBA PERO EXTENDIDO EN MALA PRACTICA
 let listHtml = lolArray.map(lol => {
   return champId
   .replace("{champ.splash}", lol.splash)
@@ -45,55 +50,47 @@ let listHtml = lolArray.map(lol => {
   .replace("{champ.info.attack}",lol.info.attack)
   .replace("{champ.info.defense}",lol.info.defense)
   .replace("{champ.info.magic}",lol.info.magic)
-  .replace("{champ.info.difficulty}",lol.info.difficulty);
+  .replace("{champ.info.difficulty}",lol.info.difficulty)
+  .replace("{champ.tags}",lol.tags);
 });
 
 
 let htmlString = listHtml.join('');
 
-let content = document.getElementById('content');
+let contentIdChamps = document.getElementById('contentIdChamps');
 
-content.innerHTML = htmlString;
+contentIdChamps.innerHTML = htmlString;*/
+function displayChampId(lolArray) {
+  let listHtml = lolArray.map(champion => champTemplate(champion));
+  let htmlString = listHtml.join(" ");
+  content.innerHTML = htmlString;
+}
 
-let order=window.totalData.convertDataArray();
-let arrayOrdenado = order.sort((a,b)=>{
-  return a - b;
-})
-console.log(arrayOrdenado);
+document.getElementById("contentIdChamps").innerHTML=`
+    ${lolArray.map(champTemplate).join("")}`
 
 
+function OrderChampsByMagic() {
+  let order=window.totalData.magicData();
+
+  let arrayOrdenado = order.sort((a,b)=>{
+    return b - a;
+  })
+  displayChampId();
+//}
+document.getElementById("magic").addEventListener("click", OrderChampsByMagic);
+//console.log(arrayOrdenado);
+window.totalData.magicData();
+
+
+/*
+//ESTA FUNCIÓN SI SIRVE PERO TODAVIA NO SE MUESTRA EN PANTALLA
 const filterChampionsByName=(datos,id) => {
   const newArray = datos.filter(champion =>  (champion.id == id));
   
   return newArray;
 }
-console.log(filterChampionsByName(lolArray,"Akali"));
-
-/*function searchChamp(){
-
-  filterData(LOL.data, document.getElementById("nameChampion").value);
-  document.getElementById("nameChampion").value="";
-}
-
-    let filterData=(data,condition) => {
-  for(let i=0; i<data.length; i++){
-    let champion = data[i];
-    if (LOL.data.id == condition) {
-      printFirstData(champion);
-
-     }
-  }
-}
+console.log(filterChampionsByName(lolArray,"Cassiopeia"));
 
 
-
- function printFirstData(champion){
-   let image=document.getElementById("info1");
-   let oneChamp=document.getElementById("championBox");
-
-   oneChamp.innerHTML= "Name: " +  champion.id + "<br>" + "<br>" + "Role: " + champion.tag + 
-                       "<br>" "Title:  " + champion.title +"<br>" + "Blurb:  " + champion.blurb +
-                       "<br>" "Info:  " + champion.info +"<br>" + "Stats:  " + champion.stats;
-                      
-
-   image.setAttribute("src", ""+champion.img);*/
+*/}
