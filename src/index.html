@@ -32,10 +32,6 @@
         <!-- PANTALLA CAMPEONES-->
         <section id="CHAMPS" style="display:none">
           <h2>"CHAMPIONS"</h2>
-          <label for="name">NAME:</label>
-          <input type="text" id="name" />
-          <br>
-          <br>
           <label for="LINE GAME">LINE:</label>
           <select ="LINE">
              <option value="1">TOP</option>
@@ -57,13 +53,25 @@
           </select>
           <br>
           <br>
-          <nav id = "Info">
+
+          <label for="champName">NAME:</label>
+          <input type="text" name="champName" id="nameChamp" />
+          <button type="submit" name="button" id="searchBtn">Buscar</button>
+          <div id="champBox"></div>
+
+          <br>
+          <br>
+          
+          <nav id = "InfoChamp">
             <button id= "attack" class="fas fa-haykal"> <br>attack</button>
             <button id= "defense" class="fas fa-hand-paper"> <br>defense</button>
             <button id= "magic" class="fas fa-hat-wizard"> <br>magic</button>
             <button id= "difficulty" class="fas fa-icicles"> <br>difficulty</button>
           </nav>
           <br>
+          
+            <div id = "OneChamp"></div>
+          
 
           <div id = "content">
             
@@ -83,6 +91,8 @@
             <button id="OtroLOL">LINK2</button>
 
         </section>
+
+        
 
 
      <footer class="pie-pagina"></footer>

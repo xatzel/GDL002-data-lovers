@@ -40,7 +40,7 @@ let champId= `
 let listHtml = lolArray.map(lol => {
   return champId
   .replace("{champ.splash}", lol.splash)
-  .replace("{champ.id}",lol.name)
+  .replace("{champ.id}",lol.id)
   .replace("{champ.title}",lol.title)
   .replace("{champ.info.attack}",lol.info.attack)
   .replace("{champ.info.defense}",lol.info.defense)
@@ -54,6 +54,20 @@ let htmlString = listHtml.join('');
 let content = document.getElementById('content');
 
 content.innerHTML = htmlString;
+
+let order=window.totalData.convertDataArray();
+let arrayOrdenado = order.sort((a,b)=>{
+  return a - b;
+})
+console.log(arrayOrdenado);
+
+
+const filterChampionsByName=(datos,id) => {
+  const newArray = datos.filter(champion =>  (champion.id == id));
+  
+  return newArray;
+}
+console.log(filterChampionsByName(lolArray,"Akali"));
 
 /*function searchChamp(){
 
@@ -75,9 +89,9 @@ content.innerHTML = htmlString;
 
  function printFirstData(champion){
    let image=document.getElementById("info1");
-   let pokedex=document.getElementById("championBox");
+   let oneChamp=document.getElementById("championBox");
 
-   pokedex.innerHTML= "Name: " +  champion.id + "<br>" + "<br>" + "Role: " + champion.tag + 
+   oneChamp.innerHTML= "Name: " +  champion.id + "<br>" + "<br>" + "Role: " + champion.tag + 
                        "<br>" "Title:  " + champion.title +"<br>" + "Blurb:  " + champion.blurb +
                        "<br>" "Info:  " + champion.info +"<br>" + "Stats:  " + champion.stats;
                       
