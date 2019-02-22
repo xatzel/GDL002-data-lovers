@@ -2,7 +2,8 @@
 // puedes ver como agregamos la función a nuestro objeto global window
 
 window.totalData={
-  convertDataArray : () => {
+  magicData : () => {
+
     let dataArray = [];
     
     Object.keys(LOL.data).forEach(function(key){
@@ -13,9 +14,8 @@ window.totalData={
     };
 
   }
-
+  
 }
-
 lolArray = Object.values(LOL.data);
 
 //console.log(LOL.data);

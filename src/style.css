@@ -1,6 +1,7 @@
 body{
   margin: 0;
-	align-items: center;
+  align-items: center;
+  
 }
 
 
@@ -8,7 +9,7 @@ body{
 .header {
   overflow: hidden;
   color: white;
-  background: url(https://lolstatic-a.akamaihd.net/lolkit/1.1.6/resources/images/bg-default.jpg);
+  
   background-color: #f1f1f1;
   padding: 20px 10px;
 }
@@ -51,10 +52,11 @@ body{
 
 .championBox {
   list-style: none;
+  color: gray;
   max-width: 50%;
   padding: 20px;
   margin: 30px auto;
-  background-color: #fff;
+  background-color: white;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);  
   display: inline-block;
   text-align:center;
@@ -78,9 +80,9 @@ body{
 .wrap-text p {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 20px;
   margin-top: 0;
-  color: #666
+  color: grey;
 }
 
   
