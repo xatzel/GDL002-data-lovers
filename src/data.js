@@ -18,23 +18,42 @@ window.totalData={
     return newArray;
   },
     
+  filterChampionsByTag: (datos,tags) => {
+    /*esta funcion debe recibir un arreglo de objetos (lo que devuelva convertData) y recibe un string
+    de tag (tag del campeon) y retorna un arreglo de objetos filtrados por tag*/
+    const newArray2 = datos.filter(champion =>  (champion.tags == tags));
+    //console.log(filterChampionsByTag(datos,tags));
+    return newArray2;
+  },
   
-  descendingOrderChamps: (data) =>{
-    // let dataArray = Object.values(data);
-    //dataArray.sort(function (a, b) {
-      let dataArray = Object.values(data);
-      Object.keys(LOL.data).forEach(function(key){
-        let order = dataArray(LOL.data[key].info.magic);        
-        let arrayOrdenado = dataArray.sort((a,b)=>{
-         return b - a;
-          })
-         return arrayOrdenado;
-      });
-      
-      console.log(dataArray);
-  }
     
-}
+    
+
+  descendingOrderChamps: () =>{ 
+    //preguntar por que aparece indefinida la funcion y que parametros se deben usar 
+    //ya que no acepta la data como parametro.????
+    //funcion de ordenamiento mayor a menor en {info{magia}} 
+    
+
+      let dataArray2 = [];
+      Object.keys(LOL.data).forEach(function(key){
+      dataArray2.push(LOL.data[key].info.magic);
+      //  COMO HACERLO DINAMICO .info.magic
+  //  console.log(dataArray2);
+
+      let arrayOrdenado = dataArray2.sort((a,b)=>{
+        return b - a;
+        
+      });
+      console.log(arrayOrdenado);
+          return arrayOrdenado;
+        
+          })
+         
+      }
+  }
+  
+
 
 //lolArray = Object.values(LOL.data);
 

@@ -69,16 +69,16 @@ function displayChampId(lolArray) {
   let listHtml = lolArray.map(champion => champTemplate(champion));
   let htmlString = listHtml.join(" ");
   content.innerHTML = htmlString;
-
 }
 
+
 //ESTA FUNCIÓN ES PARA MOSTRAR UNA SOLA TARJETA
-function showChampion(data){
+function showChampion(lolArray){
   //Esta funcion siempre espera un array de objetos;
   document.getElementById("contentIdChamps").innerHTML="";
   document.getElementById("contentIdChamps").innerHTML=`
-  ${data.map(champTemplate).join("")}` 
-  //show solo pinta mi arreglo limpiando primero mi pagina
+  ${lolArray.map(champTemplate).join("")}` 
+  //showChampin solo pinta mi arreglo limpiando primero mi pagina
 
   //TODO:
   //Refactorizar
@@ -100,7 +100,7 @@ document.getElementById("searchBtn").addEventListener("click", function (){
 //TODO:
 // CREAR UN NUEVO BOTTON PARA MOSTRAR TODOS LOS CHAMPIONS [X]
 // AGREGAR UN EVENTO AL BOTON ANTERIOR [X]
-// Llamar a la funcion showChampions(comvertDataArray(LOL.data))
+// Llamar a la funcion showChampions(convertDataArray(LOL.data))
 
 
 //para ordenar por magia
