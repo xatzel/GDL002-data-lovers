@@ -63,33 +63,48 @@ let contentIdChamps = document.getElementById('contentIdChamps');
 
 contentIdChamps.innerHTML = htmlString;*/
 
-//ESTA FUNCIÓN ES PARA MOSTRAR UNA SOLA TARJETA
+// ES PARA MOSTRAR TODAS LAS TARJETAS
 function displayChampId(lolArray) {
+  //console.log(displayChampId(lolArray));
   let listHtml = lolArray.map(champion => champTemplate(champion));
   let htmlString = listHtml.join(" ");
   content.innerHTML = htmlString;
-}
-// ES PARA MOSTRAR TODAS LAS TARJETAS
-document.getElementById("contentIdChamps").innerHTML=`
-  ${window.totalData.convertDataArray(LOL.data).map(champTemplate).join("")}`
 
+}
+
+//ESTA FUNCIÓN ES PARA MOSTRAR UNA SOLA TARJETA
+function showChampion(data){
+  //Esta funcion siempre espera un array de objetos;
+  document.getElementById("contentIdChamps").innerHTML="";
+  document.getElementById("contentIdChamps").innerHTML=`
+  ${data.map(champTemplate).join("")}` 
+  //show solo pinta mi arreglo limpiando primero mi pagina
+
+  //TODO:
+  //Refactorizar
+}
+
+
+showChampion(totalData.convertDataArray(LOL.data));
+//callback showChampion
+
+document.getElementById("searchBtn").addEventListener("click", function (){
+  //esto es lo que imprime en pantalla una sola tarjeta filtrada por nombre
+  let textImputToFilter = document.getElementById("nameChamp").value;
+  let arrayFiltered=(totalData.filterChampionsByName(totalData.convertDataArray(LOL.data),textImputToFilter));
+  showChampion(arrayFiltered);
+  document.getElementById("nameChamp").value = "";
+  
+});
+// document.getElementById("showAll").addEventListener("click", showChampion(convertDataArray(LOL.data)));
+//TODO:
+// CREAR UN NUEVO BOTTON PARA MOSTRAR TODOS LOS CHAMPIONS [X]
+// AGREGAR UN EVENTO AL BOTON ANTERIOR [X]
+// Llamar a la funcion showChampions(comvertDataArray(LOL.data))
+
+
+//para ordenar por magia
 document.getElementById("magic").addEventListener("click", () => {
   totalData.descendingOrderChamps(LOL.data);
   // mostrar el resultado de descendingOrderChamps
 });
-
-
-//document.getElementById("FromZtoA").addEventListener("click", totalData.orderChampsFromZtoA(LOL.data));
-
-
-//ESTA FUNCIÓN SI SIRVE PARA FILTRAR POR NOMBRE PERO TODAVIA NO SE MUESTRA EN PANTALLA
-//funcion pura
- console.log(totalData.filterChampionsByName(totalData.convertDataArray(LOL.data),"Cassiopeia"));
-
-//ESTA FUNCIÓN SI SIRVE PARA FILTRAR POR ROLE PERO TODAVIA NO SE MUESTRA EN PANTALLA
-/*const filterChampionsByTags=(datos,tags) => {
-  const newArrayTag = datos.filter(champion =>  (champion.tags == tags));
-  
-  return newArrayTag;
-}
-console.log(filterChampionsByTags(lolArray,"fighter"));*/

@@ -24,14 +24,14 @@ window.totalData={
     //dataArray.sort(function (a, b) {
       let dataArray = Object.values(data);
       Object.keys(LOL.data).forEach(function(key){
-        dataArray.push(LOL.data[key].info.magic);        
+        let order = dataArray(LOL.data[key].info.magic);        
         let arrayOrdenado = dataArray.sort((a,b)=>{
          return b - a;
           })
          return arrayOrdenado;
       });
       
-      //console.log(descendingOrderChamps());
+      console.log(dataArray);
   }
     
 }

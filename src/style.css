@@ -40,10 +40,7 @@ body{
   font-weight: bold;
 }
 
-section {
-  display: flex;
-  justify-content: center;
-}
+
 /* Float the link section to the right */
 .header-right {
   float: right;
@@ -70,6 +67,7 @@ section {
   padding: 20px;
   margin: 30px auto;
   background-color: white;
+  filter:Alpha(opacity=0); 
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);  
   display: inline-block;
   text-align:center;
