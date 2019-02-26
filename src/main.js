@@ -71,19 +71,20 @@ function displayChampId(lolArray) {
 }
 // ES PARA MOSTRAR TODAS LAS TARJETAS
 document.getElementById("contentIdChamps").innerHTML=`
-    ${totalData.convertDataArray(LOL.data).map(champTemplate).join("")}`
+  ${window.totalData.convertDataArray(LOL.data).map(champTemplate).join("")}`
+
+document.getElementById("magic").addEventListener("click", () => {
+  totalData.descendingOrderChamps(LOL.data);
+  // mostrar el resultado de descendingOrderChamps
+});
 
 
-let 
-
-document.getElementById("FromZtoA").addEventListener("click", totalData.orderChampsFromZtoA(LOL.data));
-
-
+//document.getElementById("FromZtoA").addEventListener("click", totalData.orderChampsFromZtoA(LOL.data));
 
 
 //ESTA FUNCIÓN SI SIRVE PARA FILTRAR POR NOMBRE PERO TODAVIA NO SE MUESTRA EN PANTALLA
 //funcion pura
-console.log(totalData.filterChampionsByName(totalData.convertDataArray(LOL.data),"Cassiopeia"));
+ console.log(totalData.filterChampionsByName(totalData.convertDataArray(LOL.data),"Cassiopeia"));
 
 //ESTA FUNCIÓN SI SIRVE PARA FILTRAR POR ROLE PERO TODAVIA NO SE MUESTRA EN PANTALLA
 /*const filterChampionsByTags=(datos,tags) => {

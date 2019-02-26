@@ -1,7 +1,13 @@
-body, section,button{
+
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+
+body{
   margin: 0;
   align-items: center;
   align-content: center;
+  background-image: url("http://cdn.eso.org/images/screen/eso1213a.jpg");
+  color:white;
+  font-family: 'Libre Baskerville', serif;
 }
 
 
@@ -10,10 +16,11 @@ body, section,button{
 .header {
   overflow: hidden;
   color: white;
-  
+  background-image: url("https://gankeradvice.files.wordpress.com/2013/02/header1.jpg");
   background-color: #f1f1f1;
-  padding: 20px 10px;
+  padding: 80px 20px;
 }
+
 
 /* Style the header links */
 .header a {
@@ -33,7 +40,10 @@ body, section,button{
   font-weight: bold;
 }
 
-
+section {
+  display: flex;
+  justify-content: center;
+}
 /* Float the link section to the right */
 .header-right {
   float: right;
