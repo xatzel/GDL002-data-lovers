@@ -22,9 +22,16 @@
         <!-- PANTALLA INICIO-->
         <section id="WELCOME">
             <h1>"WELCOME"</h1>
-            <p>adbszilubglsdgn</p>
-            <img src="http://apollo-uploads-las.s3.amazonaws.com/1437177167/mapa2.jpg" width="500" height="400">
-            <p>adbszilubglsdgn</p>
+            <p> This website was created for new users, who want to level up LOL easily. 
+              <br>When you go to the CHAMPIONS section, you could see all of the champions and 
+              <br>if you roll over to one of those you can find important info about them,  
+              <br>for instance the attack level, defense, magic or difficulty, a champion has. 
+              <br> You can filter by name if you want to know more about the champion's stats.  
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/watch?v=BGtROJeMPeE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <p>We hope this information will be useful for you.
+                <br>You could leave us a comment or suggestions in our section of LEAGUE.
+            </p>
         </section>
 
 
@@ -32,16 +39,7 @@
         <!-- PANTALLA CAMPEONES-->
         <section id="CHAMPS" style="display:none">
           <h2>"CHAMPIONS"</h2>
-          <label for="LINE GAME">LINE:</label>
-          <select ="LINE">
-             <option value="1">TOP</option>
-             <option value="2">MIDDLE</option>
-             <option value="3">SUPPORT</option>
-             <option value="4">ADC</option>
-             <option value="5">JUNGLE</option>
-          </select>
-          <br>
-          <br>
+        
           <label for="ROLE GAME">ROLE:</label>
           <select ="ROLE">
              <option value="1">Assassin</option>
@@ -56,23 +54,26 @@
 
           <label for="champName">NAME:</label>
           <input type="text" name="champName" id="nameChamp" />
-          <button type="submit" name="button" id="searchBtn">Buscar</button>
+          <button type="submit" name="button" id="searchBtn">SEARCH</button>
           <div id="champBox"></div>
 
           <br>
           <br>
           
-          <nav id = "InfoChamp">
-            <button id= "attack" class="fas fa-haykal"> <br>attack</button>
-            <button id= "defense" class="fas fa-hand-paper"> <br>defense</button>
-            <button id= "magic" class="fas fa-hat-wizard"> <br>magic</button>
-            <button id= "difficulty" class="fas fa-icicles"> <br>difficulty</button>
+          <nav class = "infoChampBtn">
+            <button id= "FromZtoA"> <br>Order from Z to A</button>
+              <div class="help-tip">
+                  <p> To see in descending order, click on</p>
+                </div>
+
+            <button id= "attack" class="fas fa-haykal"> <br>ATTACK</button>
+            <button id= "defense" class="fas fa-hand-paper"> <br>DEFENSE</button>
+            <button id= "magic" class="fas fa-hat-wizard"> <br>MAGIC</button>
+            <button id= "difficulty" class="fas fa-icicles"> <br>DIFFICULTY</button>
           </nav>
           <br>
           
-            <div id = "OneChamp"></div>
           
-
           <div id = "contentIdChamps">
             
           </div>
@@ -92,7 +93,12 @@
 
         </section>
 
-        
+         <!-- PANTALLA ONE CHAMP-->
+         <section id="OneChamp" style= "display:none">
+             
+
+
+        </section>
 
 
      <footer class="pie-pagina"></footer>

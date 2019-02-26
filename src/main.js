@@ -19,25 +19,27 @@ function passPage3(){
 }
 document.getElementById("LEAGUE").addEventListener("click", passPage3);
 
+
 //let champId= 
 function champTemplate(champ) {
-return`
-<div class="championBox">
-  <img src= "${champ.splash}" width="300" height="150>
-  <p class= "idChampion">
-  <h3>${champ.id}</h3>
-  </p>
-  <p class ="title">
-  <h3>${champ.title}</h3>
-  </p>
-  <div class="wrap-text" id="text-footer">
-  <p class=champInfo>Attack: ${champ.info.attack}</p>
-  <p class=champDefense>Defense: ${champ.info.defense}</p>
-  <p class=champMagic>Magic: ${champ.info.magic}</p>
-  <p class=champDifficulty>Difficulty: ${champ.info.difficulty}</p>
-  <p class=champRole>Role: ${champ.tags}</p>
-  </div>
-</div>`;
+  //esta funcion debe recibir un objeto que corresponde a un campeon
+  return`
+    <div class="championBox">
+      <img src= "${champ.splash}" width="300" height="150>
+      <p class= "idChampion">
+      <h3>${champ.id}</h3>
+      </p>
+      <p class ="title">
+      <h3>${champ.title}</h3>
+      </p>
+      <div class="wrap-text" id="text-footer">
+      <p class=champInfo>Attack: ${champ.info.attack}</p>
+      <p class=champDefense>Defense: ${champ.info.defense}</p>
+      <p class=champMagic>Magic: ${champ.info.magic}</p>
+      <p class=champDifficulty>Difficulty: ${champ.info.difficulty}</p>
+      <p class=champRole>Role: ${champ.tags}</p>
+      </div>
+    </div>`;
 }
 
 /*
@@ -60,37 +62,33 @@ let htmlString = listHtml.join('');
 let contentIdChamps = document.getElementById('contentIdChamps');
 
 contentIdChamps.innerHTML = htmlString;*/
+
+//ESTA FUNCIÓN ES PARA MOSTRAR UNA SOLA TARJETA
 function displayChampId(lolArray) {
   let listHtml = lolArray.map(champion => champTemplate(champion));
   let htmlString = listHtml.join(" ");
   content.innerHTML = htmlString;
 }
-
+// ES PARA MOSTRAR TODAS LAS TARJETAS
 document.getElementById("contentIdChamps").innerHTML=`
-    ${lolArray.map(champTemplate).join("")}`
+    ${totalData.convertDataArray(LOL.data).map(champTemplate).join("")}`
 
 
-function OrderChampsByMagic() {
-  let order=window.totalData.magicData();
+let 
 
-  let arrayOrdenado = order.sort((a,b)=>{
-    return b - a;
-  })
-  displayChampId();
-//}
-document.getElementById("magic").addEventListener("click", OrderChampsByMagic);
-//console.log(arrayOrdenado);
-window.totalData.magicData();
+document.getElementById("FromZtoA").addEventListener("click", totalData.orderChampsFromZtoA(LOL.data));
 
 
-/*
-//ESTA FUNCIÓN SI SIRVE PERO TODAVIA NO SE MUESTRA EN PANTALLA
-const filterChampionsByName=(datos,id) => {
-  const newArray = datos.filter(champion =>  (champion.id == id));
+
+
+//ESTA FUNCIÓN SI SIRVE PARA FILTRAR POR NOMBRE PERO TODAVIA NO SE MUESTRA EN PANTALLA
+//funcion pura
+console.log(totalData.filterChampionsByName(totalData.convertDataArray(LOL.data),"Cassiopeia"));
+
+//ESTA FUNCIÓN SI SIRVE PARA FILTRAR POR ROLE PERO TODAVIA NO SE MUESTRA EN PANTALLA
+/*const filterChampionsByTags=(datos,tags) => {
+  const newArrayTag = datos.filter(champion =>  (champion.tags == tags));
   
-  return newArray;
+  return newArrayTag;
 }
-console.log(filterChampionsByName(lolArray,"Cassiopeia"));
-
-
-*/}
+console.log(filterChampionsByTags(lolArray,"fighter"));*/
