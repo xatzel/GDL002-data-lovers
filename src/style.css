@@ -8,15 +8,19 @@ body{
   background-image: url("http://cdn.eso.org/images/screen/eso1213a.jpg");
   color:white;
   font-family: 'Libre Baskerville', serif;
+  background-attachment: fixed;
+  text-align: center;
 }
 
-
+#lolvers {
+  width: 500px;
+}
 
 /* Style the header with a grey background and some padding */
 .header {
   overflow: hidden;
   color: white;
-  background-image: url("https://gankeradvice.files.wordpress.com/2013/02/header1.jpg");
+  background-image: url(https://i.postimg.cc/sDB4cxyP/header-LOL.png);
   background-color: #f1f1f1;
   padding: 80px 20px;
 }
@@ -66,8 +70,8 @@ body{
   max-width: 50%;
   padding: 20px;
   margin: 30px auto;
-  background-color: white;
-  filter:Alpha(opacity=0); 
+  background-color: #21262d; 
+  border-radius: 5%;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);  
   display: inline-block;
   text-align:center;
@@ -76,9 +80,14 @@ body{
   
 }
 
-.championBox:hover #text-footer {
-  top: 0%;
+.championBox #text-footer {
+  width: 100%;
+	height: 100%;
+	top: 100%;
+	left: 0;
+	transition: top .5s ease
 }
+
 .wrap-text {
   padding: 15px;
   display: block;
@@ -91,15 +100,28 @@ body{
 .wrap-text p {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 18px;
+  text-align: center;
   margin-top: 0;
-  color: brown;
+  color:black;
+}
+.championBox:hover #text-footer {
+  top: 0%;
+  background-color:white;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  
 }
 
-#attack, #defense, #magic, #difficulty {
+button {
   font-size: 20px;
+  color:white;
   vertical-align: middle;
+  border-radius: 20%;
+  background-color: #21262d;
+  border-radius: 5%;
   line-height: 1.5;
+  
 }
   
 

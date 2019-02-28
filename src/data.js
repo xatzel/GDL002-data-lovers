@@ -18,43 +18,71 @@ window.totalData={
     return newArray;
   },
     
-  filterChampionsByTag: (datos,tags) => {
+  /*filterChampionsByTag: (datos,tags) => {
     /*esta funcion debe recibir un arreglo de objetos (lo que devuelva convertData) y recibe un string
-    de tag (tag del campeon) y retorna un arreglo de objetos filtrados por tag*/
+    de tag (tag del campeon) y retorna un arreglo de objetos filtrados por tag
     const newArray2 = datos.filter(champion =>  (champion.tags == tags));
     //console.log(filterChampionsByTag(datos,tags));
+    console.log(newArray2);
     return newArray2;
-  },
-  
-    
-    
+},
+*/
+
+ 
 
   descendingOrderChamps: () =>{ 
     //preguntar por que aparece indefinida la funcion y que parametros se deben usar 
     //ya que no acepta la data como parametro.????
-    //funcion de ordenamiento mayor a menor en {info{magia}} 
+    // esta es la funcion de ordenamiento mayor a menor en {info{magia}} 
+    //Florencia nos sugirio sacar el evento/target valores/ atributos a los botones 
+    //y mandarlo llamar con un event/target
+
+      //let dataArray2 = [];
+      // Object.keys(LOL.data).forEach(function(key){
+      // dataArray2.push(LOL.data[key]);
+      // hacer otra funcion que devuelva otro arreglo de objetos.
+      //y hacer otro sort para aplicarla en el arreglo de objetos.
+      //investigar como ordenar arreglo de objetos basado en una propiedad del objeto con JS??? 
+      //  COMO HACERLO DINAMICO .info.magic
+      //  console.log(dataArray2);
+      // });
+
+      
+        //hacer algo que convierta mis values en objetos en lugar de push e info.
+    
+        
+        //se imprime en consola pero aun encontramos la forma de visualizarlo en pantalla
     
 
-      let dataArray2 = [];
+      let dataArray3 = [];
       Object.keys(LOL.data).forEach(function(key){
-      dataArray2.push(LOL.data[key].info.magic);
-      //  COMO HACERLO DINAMICO .info.magic
-  //  console.log(dataArray2);
-
-      let arrayOrdenado = dataArray2.sort((a,b)=>{
-        return b - a;
-        
+        dataArray3.push(LOL.data[key].info);
+        return dataArray3;
+      })
+    
+      let orderMagic = dataArray3;
+            orderMagic.sort(function(a,b) {
+              return (b.magic - a.magic);
       });
-      console.log(arrayOrdenado);
-          return arrayOrdenado;
-        
-          })
-         
-      }
+     console.log(orderMagic);
+      return orderMagic
+     
+  },
+  
   }
   
-
-
+  /*displayNewsByDate: function(news){
+    let sortedNewsByDate = news;
+    sortedNewsByDate.sort(function(a, b) {
+      return a.date - b.date;
+    });
+    document.getElementById("root").innerHTML = "";
+    //I print my news elements inside my root div on HTML.
+    document.getElementById("root").innerHTML = `
+    ${sortedNewsByDate.map(window.dataLovers.newsTemplate).join("")}`;
+  },
+  
+}
 //lolArray = Object.values(LOL.data);
 
 //console.log(totalData.convertDataArray(LOL.data));
