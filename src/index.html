@@ -29,9 +29,8 @@
               <br>for instance the attack level, defense, magic or difficulty, a champion has. 
               <br> You can filter by name if you want to know more about the champion's stats.  
             </p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/BGtROJeMPeE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>            <p>We hope this information will be useful for you.
-                
-            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/BGtROJeMPeE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>            
+            
         </section>
 
 
@@ -53,10 +52,12 @@
           <br>
           <br>
 
-          <label for="champName">NAME:</label>
-          <input type="text" name="champName" id="nameChamp" />
+          <label for="champName"></label>
+          <input type="text" placeholder="Name Champion" name="champName" id="nameChamp" />
+          <br>
+          <br>
           <button type="submit" name="button" id="searchBtn">SEARCH</button>
-          <button id = "showAll">Show All Champions</button>
+          <button id = "showAll">ALL CHAMPIONS</button>
           <div id="champBox"></div>
           
 
@@ -88,6 +89,8 @@
             <p>COMMENTS</p>
             <textarea rows="4" cols="50">
             </textarea>
+            <br>
+            <button id="submit">"SUBMIT"</button>
             <p>
             <a href="https://lan.leagueoflegends.com/es/"> LoL Official Site </a>
             </p>
@@ -109,7 +112,10 @@
 
 
      <footer class="pie-pagina">
-      You could leave us a comment or suggestions in our section of LEAGUE.
+        <p>We hope this information will be useful for you.
+          <br> You could leave us a comment or suggestions in our section of LEAGUE.
+        </p>
+      
      </footer>
 
     <div id="root"></div>

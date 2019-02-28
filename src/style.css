@@ -22,7 +22,7 @@ body{
   color: white;
   background-image: url(https://i.postimg.cc/sDB4cxyP/header-LOL.png);
   background-color: #f1f1f1;
-  padding: 80px 20px;
+  padding: 80px 90px;
 }
 
 
@@ -66,7 +66,7 @@ body{
 
 .championBox {
   list-style: none;
-  color: gray;
+  color: white;
   max-width: 50%;
   padding: 20px;
   margin: 30px auto;
@@ -98,9 +98,10 @@ body{
 }
 
 .wrap-text p {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Libre Baskerville', serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 100;
   text-align: center;
   margin-top: 0;
   color:black;
@@ -114,16 +115,31 @@ body{
 }
 
 button {
+  font-family: 'Libre Baskerville', serif;
   font-size: 20px;
   color:white;
   vertical-align: middle;
-  border-radius: 20%;
   background-color: #21262d;
   border-radius: 5%;
   line-height: 1.5;
   
 }
+input[type=text] {
+  background-color:#21262d;
+  width: 300px;
+  height: 55px;
+  font-size: 20pt;
+  text-align: center;
+  color: white;
+  font-family: 'Libre Baskerville', serif;
+}; 
+.pie-pagina{
   
+	width: 100%;
+	background-color: #000;
+	height: 50px;
+}
+
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
 @media screen and (max-width: 500px) {
@@ -136,9 +152,4 @@ button {
     float: none;
   }
 
-}
-.pie-pagina{
-	width: 100%;
-	background-color: #000;
-	height: 50px;
 }
