@@ -61,11 +61,13 @@ function champTemplate(champ) {
 
 //ESTA FUNCIÓN ES PARA MOSTRAR UNA SOLA TARJETA ESTA ES LA BUENA
 function showChampion(variableArray){
+  console.log(variableArray);
   //Esta funcion siempre espera un array de objetos;
   //document.getElementById("contentIdChamps").innerHTML="";
   //console.log("dataLolvers",dataLolvers);
   document.getElementById("contentIdChamps").innerHTML=`
   ${variableArray.map(champTemplate).join("")}`;
+ 
   //showChampin solo pinta mi arreglo limpiando primero mi pagina
 
   //TODO:
@@ -95,8 +97,31 @@ document.getElementById("showAll").addEventListener("click", () => {
 document.getElementById("attack").addEventListener("click", () => {
   //let arrayFiltered=(totalData.filterChampionsByName(dataLolvers,textInputToFilter));
   //showChampion(arrayFiltered);
-  let arrayOrdered = (totalData.descendingOrderChamps(dataLolvers));
-  console.log(arrayOrdered);
+  let arrayOrdered = (totalData.orderByAttack(dataLolvers));
+  //console.log(arrayOrdered);
+  return showChampion(arrayOrdered);
+});
+
+document.getElementById("defense").addEventListener("click", () => {
+  //let arrayFiltered=(totalData.filterChampionsByName(dataLolvers,textInputToFilter));
+  //showChampion(arrayFiltered);
+  let arrayOrdered = (totalData.orderByDefense(dataLolvers));
+  //console.log(arrayOrdered);
+  return showChampion(arrayOrdered);
+});
+document.getElementById("magic").addEventListener("click", () => {
+  //let arrayFiltered=(totalData.filterChampionsByName(dataLolvers,textInputToFilter));
+  //showChampion(arrayFiltered);
+  let arrayOrdered = (totalData.orderByMagic(dataLolvers));
+  //console.log(arrayOrdered);
+  return showChampion(arrayOrdered);
+});
+
+document.getElementById("difficulty").addEventListener("click", () => {
+  //let arrayFiltered=(totalData.filterChampionsByName(dataLolvers,textInputToFilter));
+  //showChampion(arrayFiltered);
+  let arrayOrdered = (totalData.orderByDifficulty(dataLolvers));
+  //console.log(arrayOrdered);
   return showChampion(arrayOrdered);
 });
 //TODO:

@@ -8,23 +8,47 @@ window.totalData={
     //console.log(datos,id)
     return newArray;
    },
-  
-  descendingOrderChamps: () =>{ 
-    let dataArray3 = [];
+
+
+  infosChamps: (infoType) =>{
+    let dataArray = []
     Object.keys(LOL.data).forEach(function(key){
-      dataArray3.push(LOL.data[key]);
-      return dataArray3;
+      dataArray.push(LOL.data[key]);
+      return dataArray;
     })
   
-    let orderAttack = dataArray3;
+    let orderAttack = dataArray;
     orderAttack.sort(function(a,b) {
-      return (b.info.attack - a.info.attack);
+      return (b.info[infoType] - a.info[infoType]);
+      //mandar .info.attack como argumento
     });
-   //console.log(orderMagic);
-          return orderAttack;
-   },
-};
+    return orderAttack;
 
+
+  },
+  
+  // METODOS REFACTORIZADA
+  orderByAttack: () => {
+    let attackArray = this.totalData.infosChamps("attack");
+    
+    return attackArray;
+   },
+
+  orderByDefense: () =>{ 
+    let defenseArray = this.totalData.infosChamps("defense");
+           return defenseArray;
+   },
+
+   orderByMagic: () =>{ 
+    let magicArray = this.totalData.infosChamps("magic");
+    return magicArray;
+   },
+
+    orderByDifficulty: () =>{ 
+    let difficultyArray = this.totalData.infosChamps("difficulty");
+    return difficultyArray;
+    },
+}
     //preguntar por que aparece indefinida la funcion y que parametros se deben usar 
     //ya que no acepta la data como parametro.????
     // esta es la funcion de ordenamiento mayor a menor en {info{magia}} 
