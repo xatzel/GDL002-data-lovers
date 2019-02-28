@@ -1,18 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+
 body{
   margin: 0;
   align-items: center;
-  
+  align-content: center;
+  background-image: url("http://cdn.eso.org/images/screen/eso1213a.jpg");
+  color:white;
+  font-family: 'Libre Baskerville', serif;
+  background-attachment: fixed;
+  text-align: center;
 }
 
+#lolvers {
+  width: 500px;
+}
 
 /* Style the header with a grey background and some padding */
 .header {
   overflow: hidden;
   color: white;
-  
+  background-image: url(https://i.postimg.cc/sDB4cxyP/header-LOL.png);
   background-color: #f1f1f1;
-  padding: 20px 10px;
+  padding: 80px 90px;
 }
+
 
 /* Style the header links */
 .header a {
@@ -50,13 +62,16 @@ body{
   padding: 0px;
 }
 
+
+
 .championBox {
   list-style: none;
-  color: gray;
+  color: white;
   max-width: 50%;
   padding: 20px;
   margin: 30px auto;
-  background-color: white;
+  background-color: #21262d; 
+  border-radius: 5%;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);  
   display: inline-block;
   text-align:center;
@@ -65,9 +80,14 @@ body{
   
 }
 
-.championBox:hover #text-footer {
-  top: 0%;
+.championBox #text-footer {
+  width: 100%;
+	height: 100%;
+	top: 100%;
+	left: 0;
+	transition: top .5s ease
 }
+
 .wrap-text {
   padding: 15px;
   display: block;
@@ -78,14 +98,48 @@ body{
 }
 
 .wrap-text p {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Libre Baskerville', serif;
   font-weight: 400;
   font-size: 20px;
+  font-weight: 100;
+  text-align: center;
   margin-top: 0;
-  color: grey;
+  color:black;
+}
+.championBox:hover #text-footer {
+  top: 0%;
+  background-color:white;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  
 }
 
+button {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 20px;
+  color:white;
+  vertical-align: middle;
+  background-color: #21262d;
+  border-radius: 5%;
+  line-height: 1.5;
   
+}
+input[type=text] {
+  background-color:#21262d;
+  width: 300px;
+  height: 55px;
+  font-size: 20pt;
+  text-align: center;
+  color: white;
+  font-family: 'Libre Baskerville', serif;
+}; 
+.pie-pagina{
+  
+	width: 100%;
+	background-color: #000;
+	height: 50px;
+}
+
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
 @media screen and (max-width: 500px) {
@@ -98,9 +152,4 @@ body{
     float: none;
   }
 
-}
-.pie-pagina{
-	width: 100%;
-	background-color: #000;
-	height: 50px;
 }
