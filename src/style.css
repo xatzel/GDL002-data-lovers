@@ -7,9 +7,11 @@ body{
   align-content: center;
   background-image: url("http://cdn.eso.org/images/screen/eso1213a.jpg");
   color:white;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Quicksand', sans-serif;
   background-attachment: fixed;
   text-align: center;
+  font-size: 1.5vw;
+  
 }
 
 #lolvers {
@@ -63,6 +65,18 @@ body{
 }
 
 
+/*#attack:hover {
+	display:block;
+	transform-origin: 100% 0%;
+	-webkit-animation: fadeIn 0.3s ease-in-out;
+  animation: fadeIn 0.3s ease-in-out;
+  background-color: black;
+
+}*/
+
+
+
+
 
 .championBox {
   list-style: none;
@@ -85,7 +99,7 @@ body{
 	height: 100%;
 	top: 100%;
 	left: 0;
-	transition: top .5s ease
+	transition: top .5s ease;
 }
 
 .wrap-text {
@@ -142,14 +156,18 @@ input[type=text] {
 
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
-@media screen and (max-width: 500px) {
-  .header a {
-    float: none;
-    display: block;
-    text-align: left;
+@media screen and (max-width: 800px){
+  body {
+    font-size: 0.8vw;
   }
-  .header-right {
-    float: none;
+  
+
+}
+@media screen and (max-width: 300px){
+  body {
+    font-size: 0.2vw;
+    padding: 20%
   }
+  
 
 }

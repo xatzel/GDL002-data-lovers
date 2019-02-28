@@ -1,3 +1,6 @@
+const dataLolvers = Object.values(LOL.data);
+//console.log(dataLolvers);
+
 function passPage1(){
   document.getElementById("CHAMPS").style.display="none";//se hace invisible
   document.getElementById("WELCOME").style.display="block";//muestra el bloque o pantallas
@@ -57,39 +60,69 @@ function champTemplate(champ) {
 }*/
 
 //ESTA FUNCIÓN ES PARA MOSTRAR UNA SOLA TARJETA ESTA ES LA BUENA
-function showChampion(datadeLol){
+function showChampion(variableArray){
+  console.log(variableArray);
   //Esta funcion siempre espera un array de objetos;
   //document.getElementById("contentIdChamps").innerHTML="";
+  //console.log("dataLolvers",dataLolvers);
   document.getElementById("contentIdChamps").innerHTML=`
-  ${datadeLol.map(champTemplate).join("")}` 
+  ${variableArray.map(champTemplate).join("")}`;
+ 
   //showChampin solo pinta mi arreglo limpiando primero mi pagina
 
   //TODO:
   //Refactorizar
 }
-showChampion(totalData.convertDataArray(LOL.data));
+showChampion(dataLolvers);
 //callback showChampion
 
 document.getElementById("searchBtn").addEventListener("click", function (){
   //esto es lo que imprime en pantalla una sola tarjeta filtrada por nombre
   let textInputToFilter = document.getElementById("nameChamp").value;
-  let arrayFiltered=(totalData.filterChampionsByName(totalData.convertDataArray(LOL.data),textInputToFilter));
+  let arrayFiltered=(totalData.filterChampionsByName(dataLolvers,textInputToFilter));
   showChampion(arrayFiltered);
   document.getElementById("nameChamp").value = "";
   
 });
 //document.getElementById("showAll").addEventListener("click", showChampion);
 document.getElementById("showAll").addEventListener("click", () => {
-  return showChampion(totalData.convertDataArray(LOL.data));
+  return showChampion(dataLolvers);
 });
 
 /*document.getElementById("magic").addEventListener("click", () => {
   return showChampion(LOL.data).innerHTML = "";
 });*/
 //I print my news elements inside my root div on HTML.
+ 
+document.getElementById("attack").addEventListener("click", () => {
+  //let arrayFiltered=(totalData.filterChampionsByName(dataLolvers,textInputToFilter));
+  //showChampion(arrayFiltered);
+  let arrayOrdered = (totalData.orderByAttack(dataLolvers));
+  //console.log(arrayOrdered);
+  return showChampion(arrayOrdered);
+});
+
+document.getElementById("defense").addEventListener("click", () => {
+  //let arrayFiltered=(totalData.filterChampionsByName(dataLolvers,textInputToFilter));
+  //showChampion(arrayFiltered);
+  let arrayOrdered = (totalData.orderByDefense(dataLolvers));
+  //console.log(arrayOrdered);
+  return showChampion(arrayOrdered);
+});
 document.getElementById("magic").addEventListener("click", () => {
-  return showChampion(LOL.data).innerHTML = `
-${totalData.descendingOrderChamps.map(main.champTemplate).join("")}`;
+  //let arrayFiltered=(totalData.filterChampionsByName(dataLolvers,textInputToFilter));
+  //showChampion(arrayFiltered);
+  let arrayOrdered = (totalData.orderByMagic(dataLolvers));
+  //console.log(arrayOrdered);
+  return showChampion(arrayOrdered);
+});
+
+document.getElementById("difficulty").addEventListener("click", () => {
+  //let arrayFiltered=(totalData.filterChampionsByName(dataLolvers,textInputToFilter));
+  //showChampion(arrayFiltered);
+  let arrayOrdered = (totalData.orderByDifficulty(dataLolvers));
+  //console.log(arrayOrdered);
+  return showChampion(arrayOrdered);
 });
 //TODO:
 // CREAR UN NUEVO BOTTON PARA MOSTRAR TODOS LOS CHAMPIONS [X]
