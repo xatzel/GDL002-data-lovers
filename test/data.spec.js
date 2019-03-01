@@ -1,26 +1,22 @@
 require('../src/data.js');
-const lol = require ('../scr/data/lol/lol.js');
-describe ('Lol', ()=>{
-  it ('should be an object', () => {
-    expect (typeof lol).toBe('object');
-  });
-});
-describe('my awsome function', () =>{
-  it ('should return Aatrox name', () => {
-    expect (dataLovers.showAatroxName(lol)).toBe('Aatrox');
-  });
-});
-/*describe('filter',()=>{
-  it ('should filter my Lol by name', () => {
-    expect(filterLol(lol,'nombre')).toBe();
-  });
-});
-/*describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
-  });
+const lolDataMock= require('../src/data/lol/lolDataMock.json');
+const orderByAttackMock= require('../src/data/lol/orderByAttackMock.json');
+/*const sortDataMock  = require('../src/data/pokemon/sortDataMck.json');
+const computeStatsMock = require('../src/data/pokemon/computeStatsMock.json');*/
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+describe('lolDataMock',()=>{
+  it('is an object',()=>{
+    expect(typeof lolDataMock).toBe('object');
   });
-});*/
+});
+
+describe('orderAttack',()=>{
+  it('is a function',()=>{
+    expect(typeof window.totalData.orderByAttack).toBe('function');
+  });
+  it ('should return a subset of champions with the highest attack', ()=>{
+    expect (window.totalData.orderByAttack(lolDataMock.lol,'"attack":10')).toEqual(orderByAttackMock);
+  });
+});
+
+

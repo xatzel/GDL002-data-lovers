@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
 
+
 body{
   margin: 0;
   align-items: center;
@@ -64,19 +65,29 @@ body{
   padding: 0px;
 }
 
+#attack, #defense, #magic, #difficulty{
+  border: 1px solid #ddd;
+  border-width: 1px;
+  border-radius: 15%;
+  width: 150px;
+}
 
-/*#attack:hover {
-	display:block;
-	transform-origin: 100% 0%;
-	-webkit-animation: fadeIn 0.3s ease-in-out;
-  animation: fadeIn 0.3s ease-in-out;
-  background-color: black;
+#attack:hover, #defense:hover,#magic:hover, #difficulty:hover {
+  width: 175px;
+  top: 0%;
+  background-color:white;
 
-}*/
+}
 
+/*#attack:hover #text-footer {
+  width: 100%;
+	height: 100%;
+	top: 100%;
+	left: 0;
+	transition: top .5s ease;
+}
 
-
-
+*/
 
 .championBox {
   list-style: none;
@@ -90,7 +101,7 @@ body{
   display: inline-block;
   text-align:center;
   overflow: hidden;
-  position: relative
+  position: relative;
   
 }
 
@@ -146,10 +157,8 @@ input[type=text] {
   text-align: center;
   color: white;
   font-family: 'Libre Baskerville', serif;
-}; 
-.pie-pagina{
-  
-	width: 100%;
+}
+footer{
 	background-color: #000;
 	height: 50px;
 }
