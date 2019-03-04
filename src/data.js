@@ -59,6 +59,29 @@ window.totalData={
     let difficultyArray = window.totalData.infosChamps("difficulty");
     return difficultyArray;
     },
+
+    mode: (dataArrays) =>{
+      let modes = {};
+      dataArrays.forEach(champion => {
+          champion.tags.forEach(tag => {
+              if (typeof modes[tag] == 'undefined')
+                  modes[tag] = {
+                      name: tag,
+                      count: 0
+                  };
+     
+              modes[tag].count ++;
+     
+          })
+      })
+      console.log(modes);
+     
+     
+     
+          return Object.values(modes);
+     }
+      
+    
 };
     //preguntar por que aparece indefinida la funcion y que parametros se deben usar 
     //ya que no acepta la data como parametro.????

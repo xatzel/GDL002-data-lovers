@@ -62,4 +62,4 @@ Para el diseño del sitio web nos referimos a los sitios oficiales de la comunid
 ![prototipo de baja fidelidad](https://i.postimg.cc/gkF6SZ8K/Whats-App-Image-2019-03-03-at-17-00-36.jpg)
 
 ### Prototipo de Alta fidelidad
-![prototipo de alta fidelidad](https://www.figma.com/proto/KnO48KiGnz02dUYs0GXDfjD5/INICIO?node-id=1%3A2&viewport=261%2C103%2C0.349541&scaling=scale-down)
+![prototipo de alta fidelidad](https://i.postimg.cc/t4qZDXpy/INICIOdatalovers.png)
