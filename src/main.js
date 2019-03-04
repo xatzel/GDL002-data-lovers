@@ -1,5 +1,5 @@
 const dataLolvers = Object.values(window.LOL.data);
-console.log(JSON.stringify(dataLolvers));
+//console.log(JSON.stringify(dataLolvers));
 
 // se declara una constante global con mi array de data Lol para mandarla llamar en tas mis funciones 
 //console.log(dataLolvers);
@@ -111,4 +111,15 @@ document.getElementById("difficulty").addEventListener("click", () => {
   return showChampion(arrayOrdered);
 });
 
+modesTags = window.totalData.mode (dataLolvers);
 
+/*function showHowMany(){
+
+  let modesTags = window.totalData.mode (dataLolvers);
+    alert (modesTags);
+    
+};
+  
+let botonh = document.getElementById('howMany');
+
+  botonh = document.addEventListener("click", showHowMany());*/
