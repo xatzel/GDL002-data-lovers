@@ -7,8 +7,9 @@
   },
   "extends": "eslint:recommended",
   "globals": {
-    "cipher": false
+    "totalData": false, "LOL": false,
   },
+
   "rules": {
     "no-console": 0,
     "semi": 2,
