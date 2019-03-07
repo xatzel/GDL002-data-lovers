@@ -82,6 +82,16 @@ document.getElementById("searchBtn").addEventListener("click", function (){
   
 });
 
+/*document.getElementById("role").addEventListener("click", function (){
+  //esto es lo que imprime en pantalla una sola tarjeta filtrada por nombre
+  let textInputToFilter = document.getElementById("nameChamp").value;
+  let arrayFiltered=(window.totalData.filterChampionsByName(dataLolvers,textInputToFilter));
+  showChampion(arrayFiltered);
+  document.getElementById("nameChamp").value = "";
+  // esta es solo para limpiar el valor de input type text
+  
+});*/
+
 document.getElementById("showAll").addEventListener("click", () => {
 
   return showChampion(dataLolvers);
@@ -111,7 +121,23 @@ document.getElementById("difficulty").addEventListener("click", () => {
   return showChampion(arrayOrdered);
 });
 
-modesTags = window.totalData.mode (dataLolvers);
+modesTags = window.totalData.modeRolChamps (dataLolvers);
+
+ const templateTags = (tags) => {
+
+   return `<li>
+     <b> ${tags.name}:</b>
+     <span>${tags.count}</span>
+   </li>`
+
+};
+
+ let listaImpresa = "";
+
+modesTags.forEach(tags => {listaImpresa+=templateTags(tags)});
+console.log(listaImpresa);
+
+document.getElementById("tags").innerHTML = listaImpresa;
 
 /*function showHowMany(){
 

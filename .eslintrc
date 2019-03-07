@@ -7,11 +7,11 @@
   },
   "extends": "eslint:recommended",
   "globals": {
-    "totalData": false, "LOL": false,
+    "totalData": false, "LOL": false
   },
 
   "rules": {
     "no-console": 0,
-    "semi": 2,
+    "semi": 2
   }
 }

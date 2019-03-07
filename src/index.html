@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" dir="ltr" data-cast-api-enabled="true"></html>
   <head>
     <meta name="viewport" charset="utf-8">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link href="https://postimg.cc/gallery/w9cxan3k/">
+    <link href="https://postimg.cc/gallery/22apnbyk0/">
     <title>+LOLvers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -39,17 +39,18 @@
         <!-- PANTALLA CAMPEONES-->
         <section id="CHAMPS" style="display:none">
           <h2>"CHAMPIONS"</h2>
-        
-         <!--  <label id="RoleGame">ROLE:</label>
-          <select ="ROLE">
+        <!--
+         <label id="RoleGame">ROLE:</label>
+          <select id= "role">
              <option value="1">Assassin</option>
              <option value="2">Fighter</option>
              <option value="3">Mage</option>
              <option value="4">Marksman</option>
              <option value="5">Support</option>
              <option value="6">Tank</option>
-          </select>
-          -->
+             <option value="7">Malee</option>
+          </select>-->
+         
           <br>
           <br>
 
@@ -67,15 +68,24 @@
           
           <nav class = "infoChampBtn">
                   <p> To see in descending order, click on</p>
-              
-                <img alt="attack" id="attack" src="https://i.postimg.cc/KRrk8sKF/attack.png">  
-                <img alt="defense" id="defense" src="https://i.postimg.cc/Yvr4GfgF/Defensa.png">
-                <img alt="magic" id="magic" src="https://i.postimg.cc/QBVHS8fx/Magic.png">
-                <img alt="difficulty" id="difficulty" src="https://i.postimg.cc/sMTMpQ9N/dificultad.png">
-              
 
+                  <button id= "attack" class="fas fa-haykal"> <br>attack</button>
+                  <button id= "defense" class="fas fa-hand-paper"> <br>defense</button>
+                  <button id= "magic" class="fas fa-hat-wizard"> <br>magic</button>
+                  <button id= "difficulty" class="fas fa-icicles"> <br>difficulty</button>
+              
           </nav>
           <br>
+          <nav >
+      
+                <img class= "roleBtn" alt="assassin" id="assassin" src="https://i.postimg.cc/LhcmSPnt/Assassin.png">  
+                <img class= "roleBtn" alt="fighter" id="fighter" src="https://i.postimg.cc/QK1GC6Hp/fighter.png">
+                <img class= "roleBtn" alt="mage" id="mage" src="https://i.postimg.cc/2bPNzp8k/Mage.png">
+                <img class= "roleBtn" alt="marksman" id="marksman" src="https://i.postimg.cc/Q9BrGNDY/marksman.png">
+                <img class= "roleBtn" alt="support" id="support" src="https://i.postimg.cc/94gjnR6q/support.png">
+                <img class= "roleBtn" alt="tank" id="tank" src="https://i.postimg.cc/p9LHCY6H/tank.png">
+       
+          </nav> 
           
           
           <div id = "contentIdChamps">
@@ -86,27 +96,29 @@
 
         <!-- PANTALLA COMUNIDAD-->
         <section id="moreInfo" style= "display:none">
-            <h2>"LEAGUE"</h2>
+            <h2>"+INFO"</h2>
             <p>Do you want to know how many CHAMPIONS are 
-              in accordance of their role, CLICK ON!! </p>
+              in accordance of their role: </p>
               <nav>
-                <button id="howMany" > HOW MANY ARE</button>
+                <ul id = "tags"></ul>
+                
               
               </nav>
               
-            <p>COMMENTS</p>
+            <h1>COMMENTS</h1>
             <textarea rows="4" cols="50">
             </textarea>
             <br>
             <button id="submit">"SUBMIT"</button>
+            <h1>LINKS LEAGUE</h1>
             <p>
-            <a href="https://lan.leagueoflegends.com/es/"> LoL Official Site </a>
+            <a href ="https://lan.leagueoflegends.com/es/" class="linksLOL" > LoL Official Site </a>
             </p>
             <p>
-            <a href="https://lan.leagueoflegends.com/es/"> LoL Guides</a>
+            <a href="https://lan.leagueoflegends.com/es/"class="linksLOL"> LoL Guides</a>
             </p>
             <p>
-              <a href="https://champion.gg/statistics/#?sortBy=general.experience&order=ascend&roleSort=">Mas Guias LoL</a>
+              <a href="https://champion.gg/statistics/#?sortBy=general.experience&order=ascend&roleSort="class="linksLOL">Mas Guias LoL</a>
               </p>
 
         </section>
