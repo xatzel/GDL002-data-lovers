@@ -11,6 +11,17 @@ window.totalData={
    
    },
 
+   filterChampionsByRole: (datos,tags) => {
+    /*esta funcion debe recibir un arreglo de objetos (lo que devuelve un arreglo nuevo) y recibe un string
+    de id (nombre del campeon) asimismo retorna un arreglo de objetos filtrados por id*/
+
+    const roleArray = datos.filter(datos =>  (datos.tags[0,1] == tags[0,1])); 
+    //cuando el usuario ingresa un id igual al id que hay en data lo devuelve en  un array 
+  
+    return roleArray;
+   
+   },
+
 
   infosChamps: (infoType) =>{ //se ingresa como parametro infotype que es el arreglo con el 
     //ordenamiento que mas abajo se define (magic, defensa, ataque y dificultad).
@@ -60,25 +71,22 @@ window.totalData={
     return difficultyArray;
     },
 
-    mode: (dataArrays) =>{
-      let modes = {};
+    modeRolChamps: (dataArrays) =>{
+      let modesRoles = {};
       dataArrays.forEach(champion => {
           champion.tags.forEach(tag => {
-              if (typeof modes[tag] == 'undefined')
-                  modes[tag] = {
+              if (typeof modesRoles[tag] == 'undefined')
+                    modesRoles[tag] = {
                       name: tag,
                       count: 0
                   };
      
-              modes[tag].count ++;
+                  modesRoles[tag].count ++;
      
           })
       })
-      console.log(modes);
-     
-     
-     
-          return Object.values(modes);
+        console.log(modesRoles);
+          return Object.values(modesRoles);
      }
       
     
