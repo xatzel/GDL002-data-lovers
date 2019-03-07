@@ -82,15 +82,58 @@ document.getElementById("searchBtn").addEventListener("click", function (){
   
 });
 
-/*document.getElementById("role").addEventListener("click", function (){
-  //esto es lo que imprime en pantalla una sola tarjeta filtrada por nombre
-  let textInputToFilter = document.getElementById("nameChamp").value;
-  let arrayFiltered=(window.totalData.filterChampionsByName(dataLolvers,textInputToFilter));
-  showChampion(arrayFiltered);
-  document.getElementById("nameChamp").value = "";
-  // esta es solo para limpiar el valor de input type text
-  
-});*/
+document.getElementById("assassin").addEventListener("click", () => {
+  const champTag = "Assassin"; //este es el valor como string del tag
+  const roleFiltered = (window.totalData.filterChampionsByRole(dataLolvers,champTag));
+  showChampion(roleFiltered);
+//console.log(roleFiltered);
+document.getElementById("assassin").value = "";
+
+});
+
+document.getElementById("fighter").addEventListener("click", () => {
+  const champTag = "Fighter"; //este es el valor como string del tag
+  const roleFiltered = (window.totalData.filterChampionsByRole(dataLolvers,champTag));
+  showChampion(roleFiltered);
+//console.log(roleFiltered);
+document.getElementById("fighter").value = "";
+
+});
+document.getElementById("mage").addEventListener("click", () => {
+  const champTag = "Mage"; //este es el valor como string del tag
+  const roleFiltered = (window.totalData.filterChampionsByRole(dataLolvers,champTag));
+  showChampion(roleFiltered);
+//console.log(roleFiltered);
+document.getElementById("mage").value = "";
+
+});
+
+document.getElementById("marksman").addEventListener("click", () => {
+  const champTag = "Marksman"; //este es el valor como string del tag
+  const roleFiltered = (window.totalData.filterChampionsByRole(dataLolvers,champTag));
+  showChampion(roleFiltered);
+//console.log(roleFiltered);
+document.getElementById("marksman").value = "";
+
+});
+
+document.getElementById("support").addEventListener("click", () => {
+  const champTag = "Support"; //este es el valor como string del tag
+  const roleFiltered = (window.totalData.filterChampionsByRole(dataLolvers,champTag));
+  showChampion(roleFiltered);
+//console.log(roleFiltered);
+document.getElementById("support").value = "";
+
+});
+
+document.getElementById("tank").addEventListener("click", () => {
+  const champTag = "Tank"; //este es el valor como string del tag
+  const roleFiltered = (window.totalData.filterChampionsByRole(dataLolvers,champTag));
+  showChampion(roleFiltered);
+//console.log(roleFiltered);
+document.getElementById("tank").value = "";
+
+});
 
 document.getElementById("showAll").addEventListener("click", () => {
 
@@ -121,31 +164,22 @@ document.getElementById("difficulty").addEventListener("click", () => {
   return showChampion(arrayOrdered);
 });
 
-modesTags = window.totalData.modeRolChamps (dataLolvers);
+let modesTags = window.totalData.modeRolChamps (dataLolvers);
 
  const templateTags = (tags) => {
 
    return `<li>
      <b> ${tags.name}:</b>
      <span>${tags.count}</span>
-   </li>`
+   </li>`;
 
 };
 
  let listaImpresa = "";
 
-modesTags.forEach(tags => {listaImpresa+=templateTags(tags)});
-console.log(listaImpresa);
+modesTags.forEach(tags => {listaImpresa += templateTags(tags);
+});
+//console.log(listaImpresa);
 
 document.getElementById("tags").innerHTML = listaImpresa;
 
-/*function showHowMany(){
-
-  let modesTags = window.totalData.mode (dataLolvers);
-    alert (modesTags);
-    
-};
-  
-let botonh = document.getElementById('howMany');
-
-  botonh = document.addEventListener("click", showHowMany());*/

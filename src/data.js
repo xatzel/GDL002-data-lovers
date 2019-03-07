@@ -13,11 +13,14 @@ window.totalData={
 
    filterChampionsByRole: (datos,tags) => {
     /*esta funcion debe recibir un arreglo de objetos (lo que devuelve un arreglo nuevo) y recibe un string
-    de id (nombre del campeon) asimismo retorna un arreglo de objetos filtrados por id*/
+    de tags (role del campeon) asimismo retorna un arreglo de objetos filtrados por role*/
 
-    const roleArray = datos.filter(datos =>  (datos.tags[0,1] == tags[0,1])); 
-    //cuando el usuario ingresa un id igual al id que hay en data lo devuelve en  un array 
-  
+    const roleArray = datos.filter(datos =>  (datos.tags[0] == tags || datos.tags[1] == tags )); 
+    console.log(datos.tags);
+    
+
+    //cuando el usuario da clik al boton igual al tag(role) que hay en data lo devuelve en un array 
+    console.log(roleArray)
     return roleArray;
    
    },
@@ -83,9 +86,9 @@ window.totalData={
      
                   modesRoles[tag].count ++;
      
-          })
-      })
-        console.log(modesRoles);
+          });
+      });
+        //console.log(modesRoles);
           return Object.values(modesRoles);
      }
       
