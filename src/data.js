@@ -16,15 +16,10 @@ window.totalData={
     de tags (role del campeon) asimismo retorna un arreglo de objetos filtrados por role*/
 
     const roleArray = datos.filter(datos =>  (datos.tags[0] == tags || datos.tags[1] == tags )); 
-    console.log(datos.tags);
-    
-
     //cuando el usuario da clik al boton igual al tag(role) que hay en data lo devuelve en un array 
-    console.log(roleArray)
     return roleArray;
    
    },
-
 
   infosChamps: (infoType) =>{ //se ingresa como parametro infotype que es el arreglo con el 
     //ordenamiento que mas abajo se define (magic, defensa, ataque y dificultad).
